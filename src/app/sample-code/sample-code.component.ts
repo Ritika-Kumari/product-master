@@ -52,9 +52,6 @@ export class SampleCodeComponent implements OnInit {
 
 console.log("myObjectProduct1",this.myObjectProduct1);
     console.log("myObjectProduct2",this.myObjectProduct2);
-
-// console.log("merge",Object.copy(this.myObjectProduct1, this.myObjectProduct2))
-
     } 
 
 }
