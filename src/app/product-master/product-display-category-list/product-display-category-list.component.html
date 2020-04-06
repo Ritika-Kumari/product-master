@@ -1,0 +1,116 @@
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+                <h1>Display Category List</h1>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a routerLink="/product/productlist" href>Product List</a></li>
+                    <li class="breadcrumb-item active">Display Category List</li>
+                    <li *ngIf="liAddCategory_Visible" class="breadcrumb-item"><a href="javascript: void(0)"  (click)="btnCategory_OnClick('')">Add Category</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 py-1 ">
+            <div class="card card-success card-outline">
+                <div class="card-header">
+                    <div class="card-body table-responsive">
+                        <table class="table table-bordered table-hover "> 
+                            <thead>
+                                <tr class="text-left w-auto">
+                                    <th>S.No.</th>
+                                    <th>Name</th>
+                                    <th *ngIf="tdSortingControls_Visible"></th>
+                                    <th *ngIf="tdSortingControls_Visible"></th>
+                                    <th>Product(s)</th>
+                                    <th *ngIf="tdCategoryEdit_Visible"></th>
+                                    <th *ngIf="tdCategoryDelete_Visible"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of myListProductDisplayCategory ; let myListProductDisplayCategoryIndex = index">
+                                    <td class="text-right">{{item.id}}</td>
+                                    <td>{{item.name}}</td>
+
+                                    <td class="text-center" *ngIf="tdSortingControls_Visible"><a title="Down"
+                                            href="javascript:void(0)" style="cursor: pointer;"
+                                            *ngIf=" !(myListProductDisplayCategoryIndex == (myListProductDisplayCategory.length - 1))"
+                                            (click)="btnCategoryDown_OnClick(item , myListProductDisplayCategoryIndex)">
+                                            <i class="fas fa-chevron-down"></i></a>
+                                    </td>
+                                    <td class="text-center" *ngIf="tdSortingControls_Visible"><a title="Up"
+                                            href="javascript:void(0)" style="cursor: pointer;" *ngIf="myListProductDisplayCategoryIndex > 0"
+                                            (click)="btnCategoryUP_OnClick(item , myListProductDisplayCategoryIndex)">
+                                            <i class="fas fa-chevron-up"></i></a>
+                                    </td>
+                                    <td class="text-right">{{item.products}}</td>
+                                    <td *ngIf="tdCategoryEdit_Visible" class="text-center">
+                                        <button class="btn btn-success btn-sm" type="button" data-toggle="modal"
+                                            (click)="btnEditCategory_OnClick(item.name)">
+                                            <i class="fas fa-edit"></i>&nbsp;Edit
+                                        </button>
+                                    </td>
+                                    <td *ngIf="tdCategoryDelete_Visible" class="text-center">
+                                        <button class="btn btn-danger btn-sm" type="button" *ngIf="item.products == 0"
+                                            (click)="btnDeleteCategory_OnClick(item)">
+                                            <i class="fas fa-trash-alt"></i>&nbsp;Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="callout callout-info" *ngIf="theFooterVisible">
+        <button id="btnSubmit" class="btn btn-success ml-2 mb-2" (click)="btnApply_OnClick()">
+            <i class="fas fa-check" aria-hidden="true"></i>&nbsp;Apply
+        </button>
+        <button id="btnCancel" type="button" class="btn btn-danger ml-2 mb-2" (click)="btnCancel_OnClick()">
+            <i class="fas fa-times" aria-hidden="true"></i>&nbsp;Cancel
+        </button>
+    </div>
+
+    <!-- <div id="divCreateCategory" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"
+        data-backdrop="static">
+        <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{theCategoryHeading}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group row">
+                                <div class="offset-md-1 col-md-10">
+                                    <input id="txtCategory" name="txtCategory" type="text" class="form-control"
+                                        placeholder="Category" [(ngModel)]="theCategoryName">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnSubmitCategory" type="button" class="btn btn-success"
+                        [disabled]="!theCategoryName" (click)="btnSubmitCategory_OnClick()">
+                        <i class="fas fa-check" aria-hidden="true"></i>&nbsp;Submit
+                    </button>
+                    <button id="btnCancelCategory" type="button" class="btn btn-danger ml-2" data-dismiss="modal">
+                        <i class="fas fa-times" aria-hidden="true"></i>&nbsp;Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+     

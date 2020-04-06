@@ -1,0 +1,29 @@
+<div class="div-border" > 
+    <div>
+        <h5 class="modal-title">{{theCategoryHeading}} </h5> 
+        <br/>
+    </div>
+    <div  >
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group row">
+                    <div class="col-md-10">
+                        <input id="txtCategory" name="txtCategory" type="text" class="form-control"
+                            placeholder="Category" [(ngModel)]="theCategoryName">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <mat-dialog-actions>
+        <button id="btnSubmitCategory" type="button" class="btn btn-success"
+            [disabled]="!theCategoryName" (click)="btnSubmitCategory_OnClick()" [mat-dialog-close]="theCategoryName">
+            <i class="fas fa-check" aria-hidden="true"></i>&nbsp;Submit
+        </button>
+        <button id="btnCancelCategory" type="button" class="btn btn-danger ml-2" [mat-dialog-close]="true">
+            <i class="fas fa-times" aria-hidden="true"></i>&nbsp;Cancel
+        </button>
+    </mat-dialog-actions>
+    </div> 
+</div>

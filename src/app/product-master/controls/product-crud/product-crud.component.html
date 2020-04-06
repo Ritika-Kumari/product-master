@@ -1,0 +1,306 @@
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12 col-12">
+                <h1>Add Product</h1>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 ">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a routerLink="/product/productlist">Product List</a></li>
+                    <li class="breadcrumb-item active">Add Product</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container-fluid"> 
+        <div class="card card-success card-outline">
+
+                <div class="card-body">
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-form-label">Base Code</label>
+                            <div class="col-12 col-sm-12 col-md-4 col-xl-2">
+                                <input id="txtBaseCode" type="text" class="form-control"
+                                    placeholder="Base Code" [(ngModel)]="myObjectProduct.basecode" [disabled]="btnEdit_Visible">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-form-label">Display Name</label>
+                            <div class="col-12 col-sm-12 col-md-8 col-xl-6">
+                                <input id="txtName" type="text" class="form-control" placeholder="Display Name"
+                                    [(ngModel)]="myObjectProduct.name" [disabled]="btnEdit_Visible">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-form-label">Print Name</label>
+                            <div class="col-12 col-sm-12 col-md-8 col-xl-6">
+                                <input id="txtName1" type="text" class="form-control" placeholder="Print Name"
+                                    [(ngModel)]="myObjectProduct.name1"  [disabled]="btnEdit_Visible">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-form-label">Packing</label>
+                            <div class="col-12 col-sm-12 col-md-4 col-xl-2">
+                                <input id="txtPacking" type="text" class="form-control" placeholder="Packing"
+                                    [(ngModel)]="myObjectProduct.packing"  [disabled]="btnEdit_Visible">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-form-label">Display Category</label>
+                            <div class="col-12 col-sm-12 col-md-5 col-xl-3">
+                                <select id="ddlCategory" class="form-control"  [disabled]="btnEdit_Visible" [(ngModel)]="myObjectProduct.category_id">
+                                    <option [value]="undefined" selected>Select Category</option>
+                                    <option value="category1"> Category 1 </option>
+                                    <option value="category2"> Category 2 </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-form-label">Print Category</label>
+                            <div class="col-12 col-sm-12 col-md-5 col-xl-3">
+                                <select id="ddlCategory1" class="form-control" 
+                                    [(ngModel)]="myObjectProduct.category_id1" [disabled]="btnEdit_Visible">
+                                    <option [value]="undefined" selected>Select Category</option>
+                                    <option value="category1"> Category 1 </option>
+                                    <option value="category2"> Category 2 </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-form-label">Tax Slab</label>
+                            <div class="col-12 col-sm-12 col-md-4 col-xl-2">
+                                <select id="ddlTaxSlab"  class="form-control" [(ngModel)]="myObjectProduct.slab_id"
+                                     [disabled]="btnEdit_Visible">
+                                    <option [value]="undefined" selected>Select</option>
+                                    <option value="taxSlab1"> TaxSlab 1 </option>
+                                    <option value="taxSlab2"> TaxSlab 2 </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-form-label">HSN Code</label>
+                            <div class="col-12 col-sm-12 col-md-4 col-xl-2">
+                                <input id="txtHsnCode" type="text" class="form-control" placeholder="HSN Code"
+                                    [(ngModel)]="myObjectProduct.hsncode"  [disabled]="btnEdit_Visible">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-form-label">Discount Type</label>
+                            <div class="col-12 col-sm-12 col-md-4 col-xl-2">
+                                <select id="ddlDiscountType" class="form-control" 
+                                    [(ngModel)]="myObjectProduct.discount_type" [disabled]="btnEdit_Visible">
+                                    <option [value]="undefined" selected>Select Type</option>
+                                    <option value="1">On Sale Price</option>
+                                    <option value="2">On BV</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-form-label">Discount Slab</label>
+                            <div class="col-12 col-sm-12 col-md-4 col-xl-2">
+                                <select id="ddlDiscountSlab"  class="form-control" 
+                                    [(ngModel)]="myObjectProduct.discount_slab" [disabled]="btnEdit_Visible">
+                                    <option [value]="undefined" selected>Select Slab</option>
+                                    <option value="1">A Slab</option>
+                                    <option value="2">B Slab</option>
+                                    <option value="3">C Slab</option>
+                                    <option value="4">D Slab</option>
+                                    <option value="5">E Slab</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group div-white">
+                            <div class="col-12 col-sm-12 col-md-9 offset-md-3 offset-lg-3 offset-xl-3 div-white">
+                                <div class="row div-white">
+                                    <div class="col-1 col-sm-1  divWidth">
+                                        <label class="switch">
+                                            <input id="chkEnable_batch" class="switch-input"
+                                                type="checkbox" [(ngModel)]="myObjectProduct.enable_batch" >
+                                            <span class="switch-label"></span>
+                                            <span class="switch-handle"></span> 
+                                        </label> 
+                                    </div>
+                                    <div class="col-8 col-sm-8 ">
+                                        <label class="mt-8 div-white"> Enable Batch No.</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12 col-sm-12 col-md-9 offset-md-3 offset-lg-3 offset-xl-3">
+                                <div class="row">
+                                    <div class="col-1 col-sm-1 divWidth">
+                                        <label class="switch ">
+                                            <input id="chkEnable_stockvalue" type="checkbox"
+                                                class="switch-input" [(ngModel)]="myObjectProduct.enable_stockvalue" checked>
+                                            <span class="switch-label"></span>
+                                            <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                    <div class="col-6 col-sm-6">
+                                        <label class="mt-8">Enable for Stock Value</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12 col-sm-12 col-md-9 offset-md-3 offset-lg-3 offset-xl-3">
+                                <div class="row">
+                                    <div class="col-1 col-sm-1 divWidth">
+                                        <label class="switch">
+                                            <input id="chkEnable_stockcheck"  type="checkbox"
+                                                class="switch-input" [(ngModel)]="myObjectProduct.enable_stockcheck" checked>
+                                            <span class="switch-label"></span>
+                                            <span class="switch-handle"></span>
+                                        </label>
+                                    </div>
+                                    <div class="col-6 col-sm-6">
+                                        <label class="mt-8">Enable for Stock Check</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+        
+                            <div class="col-12 col-sm-12 col-md-9 offset-md-3 offset-lg-3 offset-xl-3">
+                                <div class="row">
+                                    <div class="col-1 col-sm-1 divWidth">
+                                        <label class="switch">
+                                            <input id="chkEnable_fssai"  class="switch-input" type="checkbox"
+                                                [(ngModel)]="myObjectProduct.enable_fssai" checked />
+                                            <span class="switch-label"></span>
+                                            <span class="switch-handle"></span>
+                                        </label> </div>
+                                    <div class="col-6 col-sm-6"> <label class="mt-8">Enable for FSSAI Compliance</label></div>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="card card-outline card-primary"  *ngIf="btnEdit_Visible">
+            <div class="card-header">
+                <h3 class="card-title">Sub Code(s)</h3>
+                <div class="card-tools">
+                    <button *ngIf="btnAddSubCode_Visible" id="btnSubCode" type="button"
+                        class="btn btn-sm btn-info ml-2 mb-2" (click)="btnAddSubCode_OnClick()">
+                        <i class="fas fa-plus" aria-hidden="true"></i> Add Sub Code
+                    </button>
+                </div>
+            </div>
+            <div class="card-body table-responsive text-nowrap p-2">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr class="text-left w-auto">
+                            <th>S.No.</th>
+                            <th>Sub Code</th>
+                            <th>Code</th>
+                            <th></th>
+                            <th>Inner Box Qty.</th>
+                            <th>Outer Box Qty.</th>
+                            <th>MRP</th>
+                            <th>Sale Price</th>
+                            <th>Points-1</th>
+                            <th>Points-2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of myListProductSubCode ; let myListProductSubCodeIndex = index">
+                            <td class="text-right">{{myListProductSubCodeIndex + 1}}</td>
+                            <td class="text-right">{{item.subcode}}</td>
+                            <td class="text-right">{{item.code}}</td>
+                            <td class="text-center">
+                                <a title="View" href="javascript:void(0)" (click)="tdViewLink_OnClick(item)" ><i class="fas fa-search-plus"></i></a>
+                            </td>
+                            <td class="text-right">{{item.pack_qty}}</td>
+                            <td class="text-right">{{item.cartoon_qty}}</td>
+                            <td class="text-right">{{item.mrp}}</td>
+                            <td class="text-right">{{item.saleprice}}</td>
+                            <td class="text-right">{{item.points1}}</td>
+                            <td class="text-right">{{item.points2}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="callout callout-info">
+            <button id="btnSubmit" type="button" class="btn btn-success ml-2 mb-2"  *ngIf="!btnEdit_Visible"
+            (click)="btnSubmit_OnClick()">
+                <i class="fas fa-check" aria-hidden="true"></i>&nbsp;Submit 
+            </button>
+    
+            <button id="btnEdit" type="button" class="btn btn-success ml-2 mb-2" *ngIf="btnEdit_Visible"
+                (click)="btnEdit_OnClick()">
+                <i class="fa fa-edit" aria-hidden="true"></i>&nbsp;Edit
+            </button>
+            <button id="btnCancel" type="button" class="btn btn-danger ml-2 mb-2"  
+                (click)="btnCancel_OnClick()">
+                <i class="fas fa-times" aria-hidden="true"></i>&nbsp;Cancel
+            </button>
+        
+        </div> 
+
+       
+    <!-- </form>  -->
+ 
+    <!-- <form name="subCodeForm" (ngSubmit)="subCodeForm.form.valid && AddEditSubCode()" #subCodeForm="ngForm" novalidate>
+         <div id="popupSubcode"  class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="col-10 col-sm-10 col-md-10 col-lg-7">
+                                <h5 class=" modal-title">{{thePopupTitle}}</h5>
+                            </div>
+                            <div class="d-none d-lg-block col-lg-4">
+                                <h5 class="modal-title">Additional Details</h5>
+                            </div>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                                        <div class="form-group row">
+                                            <label class="col-md-5 col-form-label">Inner Box Qty.</label>
+                                            <div class="col-md-6">
+                                                <input id="txtInnerBox" name="txtInnerBox" type="text" class="form-control"
+                                                    placeholder="Inner Box Qty" appNumeric numericType="number"
+                                                    pattern="(^[^0](\d)*)$" [(ngModel)]="myObjectProductSubCode.pack_qty"
+                                                    #txtInnerBox="ngModel" [ngClass]="{ 'cursor-not-allowed': btnSubCodeEdit_Visible,
+                                                'is-invalid': (txtInnerBox.dirty || txtInnerBox.touched)  && txtInnerBox.invalid ,
+                                                'is-valid': txtInnerBox.valid }" [disabled]="btnSubCodeClose_Visible" required>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                        </div>
+            
+                        <div class="modal-footer">
+                            <button id="btnSubmitPopup" type="submit" class="btn btn-success" 
+                                *ngIf="btnSubmitPopup_Visible" (click)="btnSubmitPopup_OnClick()">
+                                <i class="fas fa-check" aria-hidden="true"></i> Submit
+                            </button>
+                            <button id="btnCancelPopup" type="button" class="btn btn-danger ml-2"
+                                *ngIf="btnSubmitPopup_Visible" (click)="btnCancelPopup_OnClick()">
+                                <i class="fas fa-times" aria-hidden="true"></i> Cancel
+                            </button>
+                            <button id="btnEditPopup" type="button" class="btn btn-success"
+                                *ngIf="btnEditPopup_Visible" (click)="btnEditPopup_OnClick()">
+                                <i class="fas fa-edit" aria-hidden="true"></i> Edit
+                            </button>
+                            <button id="btnClosePopup" type="button" class="btn btn-danger ml-2"
+                                *ngIf="btnEditPopup_Visible" (click)="btnClosePopup_OnClick()">
+                                <i class="fas fa-times" aria-hidden="true"></i> Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form> -->
+   
+</div>

@@ -1,0 +1,212 @@
+<div class="div-border">
+    <div>
+        <div class="col-10 col-sm-10 col-md-10 col-lg-7">
+            <h5 class=" modal-title">{{thePopupTitle}}</h5>
+        </div>
+        <div class="d-none d-lg-block col-lg-4">
+            <h5 class="modal-title">Additional Details</h5>
+        </div> 
+    </div>
+    <div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                <div class="form-group row">
+                    <label class="col-md-5 col-form-label">Inner Box Qty.</label>
+                    <div class="col-md-6">
+                        <input id="txtInnerBox" type="text" class="form-control"
+                            placeholder="Inner Box Qty" appNumeric numericType="number" pattern="(^[^0](\d)*)$"
+                            [(ngModel)]="myObjectProductSubCode.pack_qty" [disabled]="btnSubCodeClose_Visible" >
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-5 col-form-label">Outer Box Qty.</label>
+                    <div class="col-md-6">
+                        <input id="txtOuterBox"  type="text" class="form-control"
+                            placeholder="Outer Box Qty" appNumeric numericType="number" pattern="(^[^0](\d)*)$"
+                            [(ngModel)]="myObjectProductSubCode.cartoon_qty" [disabled]="btnSubCodeClose_Visible" >
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-5 col-form-label">MRP</label>
+                    <div class="col-md-6">
+                        <input id="txtMRP"  type="text" class="form-control" placeholder="MRP" appNumeric
+                            numericType="number" [(ngModel)]="myObjectProductSubCode.mrp" [disabled]="btnSubCodeClose_Visible" >
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-5 col-form-label">Sale Price</label>
+                    <div class="col-md-6">
+                        <input id="txtSalePrice" type="text" class="form-control"
+                            placeholder="Sale Price" appNumeric numericType="number"
+                            [(ngModel)]="myObjectProductSubCode.saleprice" [disabled]="btnSubCodeClose_Visible">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-5 col-form-label">Points-1</label>
+                    <div class="col-md-6">
+                        <input id="txtPoints1" type="text" class="form-control" placeholder="Points-1"
+                            appNumeric numericType="number" [(ngModel)]="myObjectProductSubCode.points1" [disabled]="btnSubCodeClose_Visible" >
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-5 col-form-label">Points-2</label>
+                    <div class="col-md-6">
+                        <input id="txtPoints2" type="text" class="form-control" placeholder="Points-2"
+                            appNumeric numericType="number" [(ngModel)]="myObjectProductSubCode.points2" [disabled]="btnSubCodeClose_Visible" >
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                <div class="form-group row d-lg-none">
+                    <h5 class="custom-control modal-title">Additional Details</h5>
+                </div>
+                <div class="form-group div-white">
+                    <div class="col-12 col-sm-12 col-md-9 offset-md-3 offset-lg-3 offset-xl-3 div-white">
+                        <div class="row div-white">
+                            <div class="col-1 col-sm-1 divWidth">
+                                <label class="switch">
+                                    <input id="chkEnable_purchase" class="switch-input"
+                                        [disabled]="btnSubCodeClose_Visible"
+                                        [(ngModel)]="myObjectProductSubCode.enable_purchase" type="checkbox">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>
+                            </div>
+                            <div class="col-8 col-sm-8 ">
+                                <label class="mt-8 div-white"> Enable for Purchase</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group div-white">
+                    <div class="col-12 col-sm-12 col-md-9 offset-md-3 offset-lg-3 offset-xl-3 div-white">
+                        <div class="row div-white">
+                            <div class="col-1 col-sm-1  divWidth">
+                                <label class="switch">
+                                    <input id="chkEnable_po" class="switch-input"
+                                        [disabled]="btnSubCodeClose_Visible"
+                                        [(ngModel)]="myObjectProductSubCode.enable_po" type="checkbox">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>
+                            </div>
+                            <div class="col-8 col-sm-8 ">
+                                <label class="mt-8 div-white"> Enable for PO</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group div-white">
+                    <div class="col-12 col-sm-12 col-md-9 offset-md-3 offset-lg-3 offset-xl-3 div-white">
+                        <div class="row div-white">
+                            <div class="col-1 col-sm-1  divWidth">
+                                <label class="switch">
+                                    <input id="chkEnable_fpo" class="switch-input"
+                                        [disabled]="btnSubCodeClose_Visible"
+                                        [(ngModel)]="myObjectProductSubCode.enable_fpo" type="checkbox">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>
+                            </div>
+                            <div class="col-8 col-sm-8 ">
+                                <label class="mt-8 div-white"> Enable for FPO</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group div-white">
+                    <div class="col-12 col-sm-12 col-md-9 offset-md-3 offset-lg-3 offset-xl-3 div-white">
+                        <div class="row div-white">
+                            <div class="col-1 col-sm-1  divWidth">
+                                <label class="switch">
+                                    <input id="chkEnable_ps" class="switch-input"
+                                        [disabled]="btnSubCodeClose_Visible"
+                                        [(ngModel)]="myObjectProductSubCode.enable_ps" type="checkbox">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>
+                            </div>
+                            <div class="col-8 col-sm-8 ">
+                                <label class="mt-8 div-white"> Enable for Packing Slip</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group div-white">
+                    <div class="col-12 col-sm-12 col-md-9 offset-md-3 offset-lg-3 offset-xl-3 div-white">
+                        <div class="row div-white">
+                            <div class="col-1 col-sm-1  divWidth">
+                                <label class="switch">
+                                    <input id="chkEnable_challan" class="switch-input"
+                                        [disabled]="btnSubCodeClose_Visible"
+                                        [(ngModel)]="myObjectProductSubCode.enable_challan" type="checkbox">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>
+                            </div>
+                            <div class="col-8 col-sm-8 ">
+                                <label class="mt-8 div-white"> Enable for Challan</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group div-white">
+                    <div class="col-12 col-sm-12 col-md-9 offset-md-3 offset-lg-3 offset-xl-3 div-white">
+                        <div class="row div-white">
+                            <div class="col-1 col-sm-1  divWidth">
+                                <label class="switch">
+                                    <input id="chkEnable_ob" class="switch-input"
+                                        [disabled]="btnSubCodeClose_Visible"
+                                        [(ngModel)]="myObjectProductSubCode.enable_ob" type="checkbox">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>
+                            </div>
+                            <div class="col-8 col-sm-8 ">
+                                <label class="mt-8 div-white"> Enable for Order Booking</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group div-white">
+                    <div class="col-12 col-sm-12 col-md-9 offset-md-3 offset-lg-3 offset-xl-3 div-white">
+                        <div class="row div-white">
+                            <div class="col-1 col-sm-1  divWidth">
+                                <label class="switch">
+                                    <input id="chkEnable_ratelist" class="switch-input"
+                                        [disabled]="btnSubCodeClose_Visible"
+                                        [(ngModel)]="myObjectProductSubCode.enable_ratelist" type="checkbox">
+                                    <span class="switch-label"></span>
+                                    <span class="switch-handle"></span>
+                                </label>
+                            </div>
+                            <div class="col-8 col-sm-8 ">
+                                <label class="mt-8 div-white"> Enable for Price List</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <mat-dialog-actions>
+            <button id="btnSubmitPopup" type="submit" class="btn btn-success" *ngIf="btnSubmitPopup_Visible"
+            (click)="btnSubmitPopup_OnClick()">
+                <i class="fas fa-check" aria-hidden="true"></i> Submit
+            </button>
+            <button id="btnCancelPopup" type="button" class="btn btn-danger ml-2" *ngIf="btnSubmitPopup_Visible"
+               [mat-dialog-close]="true">
+                <i class="fas fa-times" aria-hidden="true"></i> Cancel
+            </button>
+            <button id="btnEditPopup" type="button" class="btn btn-success" *ngIf="btnEditPopup_Visible"
+                (click)="btnEditPopup_OnClick()">
+                <i class="fas fa-edit" aria-hidden="true"></i> Edit
+            </button>
+            <button id="btnClosePopup" type="button" class="btn btn-danger ml-2" *ngIf="btnEditPopup_Visible"
+                [mat-dialog-close]="true">
+                <i class="fas fa-times" aria-hidden="true"></i> Close
+            </button>
+        </mat-dialog-actions>
+    </div>
+</div>
